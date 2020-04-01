@@ -1,6 +1,7 @@
 package mx.unnamed.scf.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,7 +17,7 @@ public class CouponRestController {
 	CouponRepository couponRepository;
 	
 	@RequestMapping(value = "/coupons", method = RequestMethod.POST)
-	public Coupon create(Coupon coupon) {
+	public Coupon create(@RequestBody Coupon coupon) {
 		
 		return couponRepository.save(coupon);
 	}
