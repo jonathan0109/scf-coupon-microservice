@@ -27,6 +27,9 @@ public class CouponRestController {
 			method = RequestMethod.GET)
 	public Coupon getCoupon(@PathVariable("code") String code) {
 		
+		// To "identify" instance number : "
+		// System.out.println("Server 2");
+		
 		return couponRepository.findByCode(code);
 	}
 }
