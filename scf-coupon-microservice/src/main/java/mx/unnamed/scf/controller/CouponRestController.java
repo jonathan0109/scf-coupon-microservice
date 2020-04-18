@@ -23,12 +23,8 @@ public class CouponRestController {
 		return couponRepository.save(coupon);
 	}
 	
-	@RequestMapping(value = "/coupons/{code}", 
-			method = RequestMethod.GET)
+	@RequestMapping(value = "/coupons/{code}", method = RequestMethod.GET)
 	public Coupon getCoupon(@PathVariable("code") String code) {
-		
-		// To "identify" instance number : "
-		// System.out.println("Server 2");
 		
 		return couponRepository.findByCode(code);
 	}
